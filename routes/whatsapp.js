@@ -7,7 +7,7 @@ dotenv.config();
 
 const WHATSAPP_API_URL = `https://graph.facebook.com/v22.0.0/${process.env.WHATSAPP_API_ID}/messages`;
 const ACCESS_TOKEN = process.env.GRAPH_API_TOKEN;
-const WEBHOOK_VERIFY_TOKEN = process.env.WHATSAPP_WEBHOOK_VERIFY_TOKEN;
+const WEBHOOK_VERIFY_TOKEN = process.env.WEBHOOK_VERIFY_TOKEN;
 
 // Webhook for WhatsApp messages
 router.post("/webhook", async (req, res) => {
