@@ -1,13 +1,12 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config();
 
 const WHATSAPP_API_URL = `https://graph.facebook.com/v22.0.0/${process.env.WHATSAPP_API_ID}/messages`;
-const ACCESS_TOKEN = process.env.WHATSAPP_API_SECRET; 
-
+const ACCESS_TOKEN = process.env.WHATSAPP_API_SECRET;
 
 // Webhook for WhatsApp messages
 router.post("/webhook", async (req, res) => {
@@ -44,4 +43,4 @@ router.post("/webhook", async (req, res) => {
   res.sendStatus(200);
 });
 
-export default router;
+module.exports = router;
