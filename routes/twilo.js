@@ -6,7 +6,7 @@ const router = express.Router();
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const twilioNumber = process.env.TWILIO_WHATSrouter_NUMBER;
+const twilioNumber = process.env.TWILIO_WHATSAPP_NUMBER;
 
 const client = new twilio(accountSid, authToken);
 
