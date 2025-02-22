@@ -20,16 +20,17 @@ router.post("/webhook", (req, res) => {
 
   const knowledgeBase = {
     1: {
-        question: "Class Schedudle",
-      reply: "Software Engineering class is on Saturday and Sunday from 8:30am to 2:30pm",
+      question: "Class Schedudle",
+      reply:
+        "Software Engineering class is on Saturday and Sunday from 8:30am to 2:30pm",
       link: "https://example.com/services",
     },
     2: {
-        question: "Exam Schedule",
+      question: "Exam Schedule",
       reply: "Software Engineering exam is on 9th of this March 2025",
     },
     support: {
-      reply: "For support, please email"
+      reply: "For support, please email",
     },
   };
 
@@ -46,7 +47,7 @@ router.post("/webhook", (req, res) => {
   // Send response using Twilio API
   client.messages
     .create({
-      from: `whatsrouter:${twilioNumber}`,
+      from: `whatsapp:${twilioNumber}`,
       to: senderNumber,
       body: replyMessage,
     })
