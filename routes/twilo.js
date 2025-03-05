@@ -20,6 +20,11 @@ router.post("/webhook", authMiddleware, async (req, res) => {
   let replyMessage =
     "I'm not sure how to respond to that. Type 'help' for options.";
 
+  if (req.session.rollNumber && incomingMsg.includes(req.session.rollNumber)) {
+    replyMessage = "";
+  }
+
+  
   const knowledgeBase = await KnowledgeBase.find();
 
   // Automated responses
