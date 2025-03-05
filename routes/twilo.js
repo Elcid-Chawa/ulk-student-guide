@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const twilio = require("twilio");
 const KnowledgeBase = require("../models/KnowledgeBase");
+const authMiddleware = require("../controllers/authMiddleware");
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ const twilioNumber = process.env.TWILIO_WHATSAPP_NUMBER;
 const client = new twilio(accountSid, authToken);
 
 // Whatsrouter Webhook
-router.post("/webhook", async (req, res) => {
+router.post("/webhook", authMiddleware, async (req, res) => {
   const incomingMsg = req.body.Body.trim().toLowerCase();
   const senderNumber = req.body.From;
 
