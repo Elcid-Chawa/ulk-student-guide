@@ -49,7 +49,7 @@ const authMiddleware = async (req, res, next) => {
       }
     });
 
-    return sendWhatsAppMessage(
+    sendWhatsAppMessage(
       From,
       `Welcome, ${student.name}! Select a query:\n` +
         "1️⃣ Class Schedule\n" +
