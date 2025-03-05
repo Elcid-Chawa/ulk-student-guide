@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const twilio = require("twilio");
+const KnowledgeBase = require("../models/KnowledgeBase");
 
 const router = express.Router();
 
